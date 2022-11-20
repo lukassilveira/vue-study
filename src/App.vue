@@ -1,15 +1,20 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
+      <NavigationVue></NavigationVue>
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import NavigationVue from './components/Navigation.vue';
+
 export default {
   name: "app",
-  components: {},
+  components: {
+    NavigationVue
+  },
   data() {
     return {};
   },
