@@ -1,6 +1,6 @@
 <template>
     <header>
-        <nav class="container">
+        <nav>
             <div class="branding">
                 <router-link class="header" :to="{ name: 'Home' }">Blogs</router-link>
             </div>
@@ -72,6 +72,7 @@ export default {
         padding: 0 25px
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
         z-index: 99
+        padding: 0
         .link
             font-weight: 500
             padding: 0 8px
@@ -80,7 +81,8 @@ export default {
                 color: #1eb8b8                
         nav
             display: flex
-            padding: 25px 0
+            padding: 25px 10px
+            justify-content: space-between
             .branding
                 display: flex
                 align-items: center
@@ -94,12 +96,10 @@ export default {
                 display: flex
                 justify-content: end
                 align-items: center
-                ul
+                .link
                     margin-right: 32px
-                    .link
-                        margin-right: 32px
-                    .link:last-of-type
-                        margin-right: 0
+                .link:last-of-type
+                    margin-right: 0
         .menu-icon
             cursor: pointer
             position: absolute
