@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-    <BlogPost :post="welcomeScreen"/>
-    <BlogPost :post="post" v-for="(post, index) in sampleBlogPosts" :key="index"/>
+    <BlogPost :post="welcomeScreen" />
+    <BlogPost :post="post" v-for="(post, index) in sampleBlogPosts" :key="index" />
+    <BlogCardVue v-for="(card, index) in sampleBlogCards" :key="index"/>
   </div>
 </template>
 
 <script>
 import BlogPost from '../components/BlogPost.vue';
+import BlogCardVue from '../components/BlogCard.vue';
 export default {
   name: "Home",
-  components: { BlogPost },
+  components: { BlogPost, BlogCardVue },
   data() {
     return {
       welcomeScreen: {
@@ -30,6 +32,12 @@ export default {
           blogPost: "This is a filler blog post content!",
           photo: "designed-for-everyone"
         }
+      ],
+      sampleBlogCards: [
+        { cardTitle: "Card Title #1", cardPhoto: "stock-1", cardDate: "May 1, 2022" },
+        { cardTitle: "Card Title #2", cardPhoto: "stock-2", cardDate: "May 1, 2022" },
+        { cardTitle: "Card Title #3", cardPhoto: "stock-3", cardDate: "May 1, 2022" },
+        { cardTitle: "Card Title #4", cardPhoto: "stock-4", cardDate: "May 1, 2022" }
       ]
     }
   }
